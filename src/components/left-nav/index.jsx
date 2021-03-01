@@ -26,16 +26,16 @@ class LeftNav extends Component {
             if (!item.children) {
                 return (
                     <Menu.Item key={item.key} icon={item.icon}>
-                            <Link to={item.key}>
-                                {item.title}
-                            </Link>
-                        </Menu.Item>
-                    )
-                } else {
-                    return (
-                        <SubMenu key={item.key} icon={item.icon} title={item.title}>
-                            {
-                                this.getMenuNodes_map(item.children)
+                        <Link to={item.key}>
+                            {item.title}
+                        </Link>
+                    </Menu.Item>
+                )
+            } else {
+                return (
+                    <SubMenu key={item.key} icon={item.icon} title={item.title}>
+                        {
+                            this.getMenuNodes_map(item.children)
                             }
                         </SubMenu>
                     )

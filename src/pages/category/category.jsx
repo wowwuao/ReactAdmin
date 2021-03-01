@@ -8,6 +8,33 @@ import {PlusCircleOutlined} from '@ant-design/icons'
 import './category.less'
 
 class Category extends Component {
+    state = {
+        react: 0,
+        go: 0,
+        datas: 0,
+        linux: 0
+    }
+    onReact = (current) => {
+        this.setState({
+            react: current
+        })
+    }
+    onGo = (current) => {
+        this.setState({
+            go: current
+        })
+    }
+    onDatas = (current) => {
+        this.setState({
+            datas: current
+        })
+    }
+    onLinux = (current) => {
+        this.setState({
+            linux: current
+        })
+    }
+
     render() {
         //Card的左侧
         const title = "学习计划"
@@ -23,7 +50,7 @@ class Category extends Component {
                 <div className="steps">
                     <div className="StepsTitle"><a href="https://react.docschina.org/docs/getting-started.html"
                                                    target="_blank">React文档精读</a></div>
-                    <Steps direction="vertical" size="small" current={2}>
+                    <Steps direction="vertical" size="small" current={this.state.react} onChange={this.onReact}>
                         <Step title="核心概念" description=""/>
                         <Step title="高级指引" description=""/>
                         <Step title="HOOK" description=""/>
@@ -35,7 +62,7 @@ class Category extends Component {
                     <div className="StepsTitle">
                         <a href="http://docscn.studygolang.com/doc/tutorial/getting-started" target="_blank">
                             Go语言</a></div>
-                    <Steps direction="vertical" size="small" current={0}>
+                    <Steps direction="vertical" size="small" current={this.state.go} onChange={this.onGo}>
                         <Step title="基本语法" description=""/>
                         <Step title="GIN框架" description=""/>
                         <Step title="Waiting" description=""/>
@@ -45,7 +72,7 @@ class Category extends Component {
                     <div className="StepsTitle">
                         数据结构与算法
                     </div>
-                    <Steps direction="vertical" size="small" current={0}>
+                    <Steps direction="vertical" size="small" current={this.state.datas} onChange={this.onDatas}>
                         <Step title="线性表" description=""/>
                         <Step title="栈" description=""/>
                         <Step title="队列" description=""/>
@@ -65,7 +92,7 @@ class Category extends Component {
                         Linux
                         {/*</a>*/}
                     </div>
-                    <Steps direction="vertical" size="small" current={0}>
+                    <Steps direction="vertical" size="small" current={this.state.linux} onChange={this.onLinux}>
                         <Step title="磁盘分区" description=""/>
                         <Step title="文件管理" description=""/>
                         <Step title="权限管理" description=""/>

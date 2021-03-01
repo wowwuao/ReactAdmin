@@ -34,7 +34,7 @@ class File extends Component {
                     </tr>
                     <tr>
                         <td className="tdTitle">第二节(9:55-11:30)</td>
-                        {n}{n} {jizu}{mobile}{jizu}{mobile}{n}{n}
+                        {n}{n} {jizu}{mobile}{jizu}{mobile}{n}
                     </tr>
                     <tr>
                         <td className="tdTitle">第三节(14:00-15:35)</td>
